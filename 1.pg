@@ -1,0 +1,22 @@
+DOCUMENT();
+
+loadMacros(
+"PGstandard.pl",
+"MathObjects.pl",
+"parserRadioButtons.pl",
+"PGcourse.pl",
+"PGML.pl"
+);
+
+Context("Numeric");
+Context()->variables->add(n => ["Real",limits => [0,10]]);
+$ans = Formula("2^{n}"); 
+
+BEGIN_PGML
+In [`\mathbb{R}^2`] we are talking about [`4`] quadrants and in [`\mathbb{R}^3`] about [`8`] octants. In [`\mathbb{R}^n`] for [`n \in\mathbb{N}`] how many [`n-`]ants do we have? 
+
+    Answer: [_]{$ans}{10}
+
+END_PGML
+
+ENDDOCUMENT();
